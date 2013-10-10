@@ -53,14 +53,21 @@ namespace results {
   boost::property_tree::ptree
   get_code_version( const std::string& path )
   {
-    std::cout << "CODE VERSION from: " << path << std::endl;
+    //std::cout << "CODE VERSION from: " << path << std::endl;
     std::ostringstream oss;
     oss << "git-version-script" << " " << path;
     std::string command = oss.str();
     redi::ipstream is( command );
+    std::stringstream ss;
+    std::string line;
+    //std::cout << "VERSION RAW:" << std::endl;
+    while( std::getline( is, line ) ) {
+      ss << line << std::endl;
+      //std::cout << line << std::endl;
+    }
     boost::property_tree::ptree code_version;
     try {
-      boost::property_tree::json_parser::read_json( is, code_version );
+      boost::property_tree::json_parser::read_json( ss, code_version );
     } catch ( boost::exception& e ) {
       throw;
     }
