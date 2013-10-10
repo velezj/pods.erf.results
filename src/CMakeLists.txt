@@ -2,12 +2,12 @@
 add_library(erf-results SHARED
     log_result.cpp
 )
+add_definitions( -DDEFAULT_CODE_VERSION_SOURCE_PATH="${CMAKE_HOME_DIRECTORY}/" )
 pods_install_headers(
     log_result.hpp
     DESTINATION
     erf-results
 )
-pods_install_libraries( erf-results )
 set(REQUIRED_PACKAGES
     erf-couchdb
     boost-1.54.0
@@ -17,6 +17,7 @@ set(REQUIRED_PACKAGES
     unittest++
     pstreams-0.8.0)
 pods_use_pkg_config_packages( erf-results ${REQUIRED_PACKAGES} )
+pods_install_libraries( erf-results )
 pods_install_pkg_config_file( erf-results
     CFLAGS
     LIBS -Lerf-results

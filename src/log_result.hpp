@@ -4,6 +4,10 @@
 
 #include <erf-couchdb/couchdb.hpp>
 
+#if !defined( DEFAULT_CODE_VERSION_SOURCE_PATH )
+#define DEFAULT_CODE_VERSION_SOURCE_PATH "."
+#endif
+
 
 namespace results {
 
@@ -29,7 +33,7 @@ namespace results {
   // Returns a ptree (JSON) representing hte code version for a 
   // given path (default to current working directory)
   boost::property_tree::ptree
-  get_code_version( const std::string& path = "." );
+  get_code_version( const std::string& path = DEFAULT_CODE_VERSION_SOURCE_PATH );
 
   //----------------------------------------------------------------------
 

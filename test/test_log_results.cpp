@@ -5,9 +5,6 @@
 #include <boost/network/uri/uri_io.hpp>
 
 
-using namespace results;
-
-
 
 int main( int argc, char** argv )
 {
@@ -29,7 +26,7 @@ int main( int argc, char** argv )
     
     // try to log the results
     boost::property_tree::ptree res =
-      log_results( couch, doc );
+      results::log_results( couch, doc );
     
     // print out result
     std::cout << "RESPONSE: " << std::endl;

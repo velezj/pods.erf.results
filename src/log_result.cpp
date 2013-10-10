@@ -26,7 +26,7 @@ namespace results {
   log_results( const couchdb::Couchdb& couch,
 	       const boost::property_tree::ptree& doc )
   {
-      
+    
     // setup some defaults for the result property tree (doc)
     boost::property_tree::ptree default_doc;
 
@@ -53,6 +53,7 @@ namespace results {
   boost::property_tree::ptree
   get_code_version( const std::string& path )
   {
+    std::cout << "CODE VERSION from: " << path << std::endl;
     std::ostringstream oss;
     oss << "git-version-script" << " " << path;
     std::string command = oss.str();

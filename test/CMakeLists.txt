@@ -12,7 +12,6 @@
 add_executable( erf-results-test-log-results
     test_log_results.cpp
 )
-pods_use_pkg_config_packages( erf-results-test-log-results
-    erf-results
-)
+pods_use_pkg_config_packages( erf-results-test-log-results erf-results )
+target_link_libraries( erf-results-test-log-results erf-results )
 pods_install_executables( erf-results-test-log-results )
