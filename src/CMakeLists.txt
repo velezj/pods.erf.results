@@ -14,7 +14,8 @@ set(REQUIRED_PACKAGES
     cppnetlib-client-connections-0.10.1
     cppnetlib-uri-0.10.1 
     openssl-1.0.1e
-    unittest++)
+    unittest++
+    pstreams-0.8.0)
 pods_use_pkg_config_packages( erf-results ${REQUIRED_PACKAGES} )
 pods_install_pkg_config_file( erf-results
     CFLAGS

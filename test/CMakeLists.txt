@@ -8,3 +8,11 @@
 
 ## # make executable public
 ## pods_install_executables(hello-test)
+
+add_executable( erf-results-test-log-results
+    test_log_results.cpp
+)
+pods_use_pkg_config_packages( erf-results-test-log-results
+    erf-results
+)
+pods_install_executables( erf-results-test-log-results )
