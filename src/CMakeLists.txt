@@ -11,10 +11,8 @@ pods_install_headers(
 set(REQUIRED_PACKAGES
     erf-couchdb
     boost-1.54.0
-    cppnetlib-client-connections-0.10.1
-    cppnetlib-uri-0.10.1 
-    openssl-1.0.1e
-    unittest++
+    boost-1.54.0-system
+    boost-1.54.0-chrono 
     pstreams-0.8.0)
 pods_use_pkg_config_packages( erf-results ${REQUIRED_PACKAGES} )
 pods_install_libraries( erf-results )

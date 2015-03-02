@@ -2,7 +2,7 @@
 #include <erf-results/log_result.hpp>
 #include <iostream>
 #include <boost/property_tree/json_parser.hpp>
-#include <boost/network/uri/uri_io.hpp>
+
 
 
 
@@ -12,7 +12,7 @@ int main( int argc, char** argv )
   try {
 
     // create a new couchdb instance
-    couchdb::Couchdb couch( boost::network::uri::uri("http://localhost:5984/test_log_results/") );
+    couchdb::Couchdb couch( "http://localhost:5984/test_log_results/" );
     
     // create a fake set of results
     boost::property_tree::ptree doc;
